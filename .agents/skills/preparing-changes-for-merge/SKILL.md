@@ -15,7 +15,8 @@ Running the checks themselves is `writing-tests`.
    and keep their output. Only checks that really ran go into the text later.
 2. **Check against the skills.** Once the branch is complete, before opening its PR, check the
    whole branch against the skills that match what it touches, organisation and duplication
-   first. Not on every commit. How: `references/reviewing.md`.
+   first, and scan it for personal data such as home paths with a username. Not on every
+   commit. How: `references/reviewing.md`.
 3. **Review.** Before opening a PR that changes code, a reviewer with a fresh context reviews the
    diff against the same skills. A change to docs or other text only needs no review.
 4. **Answer.** Every finding is fixed or closed with a reason. Nothing is left silent.
