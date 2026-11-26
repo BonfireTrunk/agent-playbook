@@ -1,0 +1,2 @@
+- Metrics and tracing rules for projects that run as services: held until a project runs in production.
+- Hard guardrails that block destructive commands (force push, `rm -rf`, reading `~/.ssh`) every time instead of relying on written rules: brainstorm the approach first, possibly scripts shared across agent harnesses rather than per-harness config only.
