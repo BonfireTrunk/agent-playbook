@@ -38,6 +38,25 @@ Once the branch is complete, go through the whole branch diff once (`git diff <b
 against the skills that match it, with the organisation and duplication sections first. Fix what
 it finds, then hand the branch to the reviewer.
 
+In the same pass, scan the branch for personal data it would publish:
+
+- absolute paths that contain a username (`/home/<name>/`, `/Users/<name>/`, `C:\Users\<name>\`),
+  the user's name, login or email address
+- files that should not be committed: a nested repository (a `.git` folder committed as a
+  gitlink), `.env` files, editor and IDE state with local paths (`.idea/`, `.vscode/`), logs,
+  dependency folders
+
+```bash
+git diff <base>...HEAD | grep -nE "^\+.*(/home/|/Users/|[A-Za-z]:\\\\Users\\\\|$(whoami))"
+git diff --name-only <base>...HEAD | grep -E '(^|/)(\.idea|\.vscode|\.env|node_modules)(/|$)|\.log$'
+git diff --summary <base>...HEAD | grep 'mode 160000'
+```
+
+Tell the user about every hit, with file and line, before opening the PR. Replace a path with one
+relative to the repo, `~`, `$HOME` or a placeholder, and untrack files that do not belong. A hit
+in a commit already pushed stays in the branch history after the fix: a squash merge keeps it
+out of the main branch, but rewriting the branch needs the user's go.
+
 ## Who reviews
 
 - A reviewer with a fresh context: a helper agent or a separate session that did not write the
