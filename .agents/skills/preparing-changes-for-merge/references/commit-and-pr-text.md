@@ -1,8 +1,23 @@
 # Commit messages and PR descriptions
 
-Open before writing or editing a commit message, a PR title or a PR description.
+Open before making a commit, or writing or editing a commit message, a PR title or a PR
+description.
 
-**Scope.** Commit subjects and bodies, PR titles and descriptions, and later edits to either.
+**Scope.** What one commit holds, commit subjects and bodies, PR titles and descriptions, and
+later edits to either.
+
+## What one commit holds
+
+- One commit is one sensible work packet: a feature slice, a fix with its tests, a refactor, a
+  rule change with the docs it touches. It builds and its unit tests pass. Never one commit per
+  edit, file, step or review finding.
+- A small follow-up (a typo, a review finding, a forgotten file, a formatter run) joins the work
+  it belongs to. Not pushed yet and it belongs to the last commit: amend it
+  (`git commit --amend --no-edit -- <paths>`). Otherwise it goes in with the next work packet.
+  It gets a commit of its own only when it is the only change to make.
+- Never rewrite pushed commits to tidy the history: that is a force push and needs the user's
+  go.
+- If no single title is true of a commit, it holds two packets: split it.
 
 ## The test
 
@@ -52,8 +67,7 @@ contain.
   activity: "Update files", "Fix bug", "WIP", "Changes", "Address review comments".
 - Follow the repo's existing style. Read `git log --oneline -15` first: prefix, tense,
   capitalisation, trailing period or none.
-- One commit covers one task. If no single title is true of a commit, split it. A PR that
-  carries a batch of changes names each part in its title.
+- A PR that carries a batch of changes names each part in its title.
 - When later commits change the scope, update the PR title and description in the same step.
 
 ## What the text triggers

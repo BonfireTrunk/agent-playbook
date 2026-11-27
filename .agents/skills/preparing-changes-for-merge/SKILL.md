@@ -30,4 +30,4 @@ Open the one for the step you are on. Each holds the rules for that step in full
 | Open | When |
 |---|---|
 | `references/reviewing.md` | checking a branch against the skills before its PR, reviewing a diff, reporting findings, answering findings, a second or third review round |
-| `references/commit-and-pr-text.md` | before writing or editing a commit message, a PR title or a PR description |
+| `references/commit-and-pr-text.md` | before making a commit (what one commit holds), or writing or editing a commit message, a PR title or a PR description |
