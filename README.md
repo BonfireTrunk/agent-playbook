@@ -2,8 +2,8 @@
 
 Engineering skills and global instructions for AI coding agents (Claude Code, Codex, Cursor and
 others that read `SKILL.md` files). They set house rules for backends, frontends, databases,
-security, tests, code comments, project records and the steps from a finished change to a merged
-one. For developers who want their agents to follow one consistent set of conventions across
+security, privacy-law compliance, tests, code comments, project records and the steps from a
+finished change to a merged one. For developers who want their agents to follow one consistent set of conventions across
 projects.
 
 ## Quick start
@@ -30,6 +30,7 @@ bunx skills update -g writing-tests building-backends
 
 | Skill | What it covers |
 |---|---|
+| `auditing-privacy-compliance` | What a product must let its customers do under the GDPR, UK GDPR, US state laws, CCPA, HIPAA, GLBA, COPPA, India's DPDP Act and the EU AI Act: capability checklist, law comparison, research method, gap-analysis report |
 | `building-backends` | Backend rules in any language: layers, one owner per rule, validation, typed errors and error codes, auth, bitmask permissions, response shapes, public API versioning, package layout, jobs, dead code |
 | `building-elysia-servers` | JavaScript backends on Bun with Elysia: routes, services, TypeBox, auth guards, logging, config, Redis or Valkey, BullMQ, payments |
 | `building-frontends` | Vue, Nuxt, React and Next.js on Bun with Vite and Tailwind CSS v4: components, state, API client, auth, forms, accessibility, naming |
